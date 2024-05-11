@@ -1,0 +1,198 @@
+.contact-us-section {
+    background-color: $cetim-primary-color;
+
+    .d-flex {
+        justify-content: space-between;
+    }
+
+    .contact-us__content {
+        padding: 40px 0 40px 0;
+        text-align: center;
+        @media screen and (min-width: $md-breakpoint) {
+            & {
+                padding: 64px 0 64px 84px;
+                text-align: left;
+            }
+        }
+        h3 {
+            font-size: 32px;
+            line-height: 44px;
+            letter-spacing: 1.6px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        h6 {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 35px;
+        }
+    }
+    .contact-us__image {
+        display: none;
+    }
+    @media screen and (min-width: $md-breakpoint) {
+        .contact-us__image {
+            display: block;
+            flex: 0 1 auto;
+            width: 40%;
+            
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $mecallians-secondary-700-color;
+
+    .footer-brand {
+        background-color: #fff;
+        padding: 12px 24px 12px 24px;
+        width: fit-content;
+
+        img {
+            height: 28px;
+        }
+    }
+
+    @media screen and (min-width: 1440px) { 
+        .container {
+            max-width: 1139.98px;
+        }
+    }
+
+    .footer-columns {
+        justify-content: space-between;
+    }
+
+    @media screen and (min-width: $md-breakpoint) {
+        .footer-columns {
+            padding: 51px 0;
+        }
+    }
+
+    .footer-column {
+        align-items: normal;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            color: $black-020;
+            font-size: 1rem;
+            line-height: 28px;
+            font-weight: 400;
+            max-width: 330px;
+        }
+
+        ul {
+            a {
+                display: block;
+                color: #fff;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17.6px;
+                letter-spacing: 1px;
+                margin-bottom: 16px;
+            }
+
+        }
+
+        .footer-menu {
+            a {
+                position: relative;
+                height: 27px;
+                margin-bottom: 8px;
+            }
+
+            >li {
+                margin-bottom: 20px;
+            }
+
+            >li>a::after {
+                content: "";
+                width: 49px;
+                height: 4px;
+                background-color: $cetim-primary-700-color;
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+
+            >li ul a {
+                color: $mecallians-800-color;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 28px;
+            }
+        }
+    }
+
+    .footer-column:nth-of-type(1) {
+        gap: 17px;
+    }
+
+    .footer-column.flex-end {
+        justify-content: flex-end;
+    }
+
+    .footer__social-media {
+        display: flex;
+
+        a {
+            margin-right: 12px;
+            margin-bottom: 0 !important;
+        }
+
+        .icon {
+            --icon-width: 40px;
+            --icon-height: 40px;
+        }
+    }
+    .copyright {
+       
+        .flex-sm-row {
+            flex-direction: row;
+        }
+       
+        @media screen and (min-width: $md-breakpoint) {
+            & {
+                padding-top: 13px;
+                padding-bottom: 13px;
+            }
+        }
+    
+        .copyright-column:nth-of-type(1) {
+            grid-column: col-start 1 / span 4;
+        }
+    
+        .copyright-column:nth-of-type(2) {
+            grid-column: col-start 5 / span 3;
+        }
+    
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    
+        p {
+            color: $black-040;
+        }
+    
+        p,
+        a {
+            font-size: 14px;
+            line-height: 28px;
+            font-weight: 400;
+        }
+    }
+}
+

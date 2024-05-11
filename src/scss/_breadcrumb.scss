@@ -1,0 +1,38 @@
+$breadcrumb-padding-x: 10px;
+$breadcrumb-item-active-color: $black-040;
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    color: $mecallians-secondary-700-color;
+    +.breadcrumb-item {
+        padding-left: $breadcrumb-padding-x;
+        &::before {
+            content: "";
+            padding-right: 10px;
+            background: url(../imgs/icons/arrow-right.svg);
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    &.active {
+        color: $breadcrumb-item-active-color;
+    }
+    a {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.75px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: inherit;
+    }
+}

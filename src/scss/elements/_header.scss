@@ -1,0 +1,149 @@
+header {
+  
+  .sub-header {
+    display: none;
+
+    @media screen and (min-width: $md-breakpoint) {
+      display: block;
+    }
+
+    background-color: $cetim-primary-color;
+
+    .sub-header__menu {
+      display: flex;
+      justify-content: flex-end;
+      padding-left: 0;
+      list-style: none;
+
+      .dropdown-menu {
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    .btn {
+      --padding-x: 16px;
+      --padding-y: 12px;
+      --font-size: 14px;
+      --line-height: 17.6px;
+      --letter-spacing: 0.8px;
+      --height: 42px;
+      text-transform: capitalize;
+    }
+
+    .flex {
+      --gap: 10px;
+    }
+  }
+
+  nav {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .navbar {
+    display: none;
+    visibility: hidden;
+  }
+
+  @media screen and (min-width: $md-breakpoint) {
+
+    nav {
+      background-color: #fff;
+      box-shadow: none;
+    }
+
+    .navbar {
+      height: 80px;
+      display: flex;
+      visibility: visible;
+      align-items: center;
+      padding-left: 84px;
+    }
+
+    .navbar-brand {
+      height: 54px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    margin-left: 64px;
+    gap: 42px;
+
+    .nav-link {
+      text-decoration: none;
+      color: $black-100;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 20.11px;
+      letter-spacing: 1px;
+      font-size: 16px;
+    }
+  }
+
+  .navbar-mobile ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #fff;
+
+    button {
+      width: 89px;
+      height: 60px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      span,
+      &::after,
+      &::before {
+        content: "";
+        width: 42px;
+        height: 2px;
+        display: block;
+        background-color: $cetim-primary-color;
+        transform-origin: 50% 50%;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    }
+  }
+
+
+  @media screen and (min-width: $md-breakpoint) {
+    .navbar-mobile {
+      display: none;
+    }
+  }
+
+  &.is-sticky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    nav {
+      background-color: transparent;
+    }
+    .navbar-nav {
+      .nav-link {
+        color: #fff;
+      }
+    }
+  }
+}

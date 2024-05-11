@@ -1,0 +1,41 @@
+.zone-intervention-section {
+    background-image: url(../imgs/world2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 564px;
+    @media screen and (min-width: $sm-breakpoint) {
+        padding-top: 84px;
+        padding-left: 84px;
+        background-image: url(../imgs/world.svg);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: $mecallians-secondary-700-color;
+        z-index: -1;
+    }
+
+    .zone-intervention__content {
+        max-width: 514px;
+        h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 44px;
+            letter-spacing: 1.6px;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 28px;
+            color: #fff;
+            margin-bottom: 32px;
+        }
+    }
+}

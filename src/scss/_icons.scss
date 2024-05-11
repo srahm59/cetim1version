@@ -1,0 +1,48 @@
+.icon {
+    display: inline-block;
+    width: var(--icon-width);
+    height: var(--icon-height);
+    border-radius: 50%;
+    --icon-bg: transparent;
+}
+
+.icon-sm {
+    --icon-width: 12px;
+    --icon-height: 12px;
+}
+
+.has-light-bg {
+    --icon-bg: #{$mecallians-900-color};
+}
+
+.facebook-icon {
+    background: var(--icon-bg) url(../imgs/icons/facebook.svg) no-repeat 50%;
+}
+
+.twitter-icon {
+    background: var(--icon-bg) url(../imgs/icons/twitter-x.svg) no-repeat 50%;
+}
+
+.linkedin-icon {
+    background: var(--icon-bg) url(../imgs/icons/linkedin.svg) no-repeat 50%;
+}
+
+.youtube-icon {
+    background: var(--icon-bg) url(../imgs/icons/youtube.svg) no-repeat 50%;
+}
+
+.chevron-dwn-icon {
+    background: var(--icon-bg) url(../imgs/icons/chevron_down.svg) no-repeat 50%;
+}
+
+.search-icon {
+    background: var(--icon-bg) url(../imgs/icons/search.svg) no-repeat 50%;
+}
+
+.phone-icon {
+    background: var(--icon-bg) url(../imgs/icons/phone.svg) no-repeat 50%;
+}
+
+.email-icon {
+    background: var(--icon-bg) url(../imgs/icons/email.svg) no-repeat 50%;
+}

@@ -1,0 +1,5 @@
+/node_modules
+/dist
+/src/imgs/*.png
+/src/imgs/*.jpg
+/src/imgs/*.jpeg

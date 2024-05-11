@@ -1,0 +1,49 @@
+.accreditations-section {
+    background-color: rgba(184, 206, 227, 0.2);
+    @media screen and (min-width: $lg-breakpoint) {
+        padding: 84px;
+    }
+    .accreditations__items {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        gap: 32px;
+        @media screen and (min-width: $lg-breakpoint) {
+            flex-direction: row;
+            > * {
+                flex: 0 1 auto;
+                width: 50%;
+            }
+        }
+       
+    }
+    .accreditations__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+    .accreditations__image {
+        height: 241px;
+        @media screen and (min-width: $lg-breakpoint) {
+            height: 449px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 44px;
+        letter-spacing: 1.6px;
+        color: $mecallians-secondary-700-color;
+    }
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 28px;
+        color: $black-100;
+    }
+}
