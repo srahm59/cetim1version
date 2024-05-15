@@ -94,7 +94,7 @@
       display: flex;
       @media screen and (max-width: calc($lg-breakpoint - 1px)) {
         > .historique-heading, .historique-item {
-          width: 90%;
+          width: 95%;
         }
       }
     }

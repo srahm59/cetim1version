@@ -26,7 +26,7 @@ export class Slider {
           "click",
           this.sliderNav.bind(this, this.sliderPrev.direction, this)
         ));
-
+      this.historiqueSliderMobileAdaptation();
       this.resizeEvent = () => {
         this.reInit();
       };
@@ -45,10 +45,9 @@ export class Slider {
           : this.sliderTL.progress() - snapValue
       ),
       duration: 0.7,
-      ease: "elastic.out(1, 1)",
+      // ease: "elastic.out(1, 1)",
     });
     if (this.sliderTL.progress() <= snapValue + 0.1 && "next" !== direction) {
-      console.log("hello if");
       const timeline = gsap.timeline();
       timeline.to(this.slider, {
         x: 100,
@@ -64,7 +63,6 @@ export class Slider {
       this.sliderTL.progress() >= 1 - snapValue - 0.1 &&
       "next" === direction
     ) {
-      console.log("hello else");
       const timeline = gsap.timeline();
       timeline.to(this.slider, {
         x: -100,
@@ -96,7 +94,6 @@ export class Slider {
   }
 
   initSlider(start) {
-
     this.sliderTL = null;
     this.dragSlider = null;
 
@@ -200,7 +197,7 @@ export class Slider {
           gsap.to(this.slider, {
             x: 0,
             duration: 0.7,
-            ease: "elastic.out(1, 1)",
+            // ease: "elastic.out(1, 1)",
           });
           gsap.to(this.sliderTL, {
             progress: () =>
@@ -209,7 +206,7 @@ export class Slider {
                 this.sliderTL.progress() + (-direction * snapValue) / 2
               ),
             duration: 1,
-            ease: "elastic.out(1, 1)",
+            // ease: "elastic.out(1, 1)",
           });
         },
       }
@@ -221,8 +218,8 @@ export class Slider {
   reInit() {
     const currentProgress = this.sliderTL.progress();
     this.kill();
-    if(this.sliderContainer.classList.contains("historique__section")) {
-      this.historiqueSliderMobileAdaptation()
+    if (this.sliderContainer.classList.contains("historique__section")) {
+      this.historiqueSliderMobileAdaptation();
     }
     this.initSlider(currentProgress);
   }
@@ -254,8 +251,7 @@ export class Slider {
 
   historiqueSliderMobileAdaptation() {
     if (window.matchMedia("(max-width: 991px)").matches) {
-      if(this.sliderContainer.querySelector(".historique-timeline")) {
-        console.log("small");
+      if (this.sliderContainer.querySelector(".historique-timeline")) {
         const timeline = this.sliderContainer.querySelector(".slider");
         const slider = this.sliderContainer.querySelector(".historique-items");
         const sliderHeading = slider.querySelector(".historique-heading");
@@ -270,10 +266,10 @@ export class Slider {
             slider.appendChild(child);
           }
         }
-        if(timeline) {
+        if (timeline) {
           timeline.remove();
         }
-        if(sliderHeading.querySelector(".btn-group")) {
+        if (sliderHeading.querySelector(".btn-group")) {
           sliderHeading.querySelector(".btn-group").remove();
         }
         sliderHeading.classList.add("slider-item");
@@ -282,15 +278,44 @@ export class Slider {
         this.sliderItems = this.slider.querySelectorAll(".slider-item");
         this.sliderNext = null;
         this.sliderPrev = null;
+
+        // Add navigation dots
+
+        const dotsWrapper = document.createElement("div");
+        dotsWrapper.classList.add("dots");
+
+        for (let index = 0; index < this.sliderItems.length; index++) {
+          const direction = "next";
+          const dot = document.createElement("a");
+          dot.classList.add("dot");
+          dot.addEventListener("click", () => {
+            const snapValue = (1 / (this.sliderItems.length - this.getSlideVisibles())) * index;
+            gsap.to(this.sliderTL, {
+              progress: gsap.utils.snap(
+                snapValue,
+                "next" === direction
+                  ? snapValue
+                  : snapValue
+              ),
+              duration: 0.7,
+            });
+            const activeDots = dotsWrapper.querySelectorAll(".dot.active");
+            activeDots.forEach(element => {
+              element.classList.remove("active")
+            });
+            dot.classList.add("active");
+          });
+          dotsWrapper.appendChild(dot);
+        }
+        this.sliderContainer.appendChild(dotsWrapper);
       }
     } else {
-      if(!this.sliderContainer.querySelector(".historique-timeline")) {
-        console.log("large");
+      if (!this.sliderContainer.querySelector(".historique-timeline")) {
         const timeline = document.createElement("div");
-        timeline.classList.add("historique-timeline","slider");
+        timeline.classList.add("historique-timeline", "slider");
         const slider = this.sliderContainer.querySelector(".historique-items");
         const sliderHeading = slider.querySelector(".historique-heading");
-        sliderHeading.classList.remove("slider-item")
+        sliderHeading.classList.remove("slider-item");
         sliderHeading.removeAttribute("style");
         const timelineChildren = new Array();
         for (const child of slider.children) {
@@ -306,38 +331,38 @@ export class Slider {
 
         // Navigation buttons
         const buttonsGroup = document.createElement("div");
-        buttonsGroup.classList.add("btn-group")
+        buttonsGroup.classList.add("btn-group");
         const prevButton = document.createElement("button");
         prevButton.classList.add("slider-prev");
         prevButton.innerHTML = `<img src="imgs/arrow-left.svg" alt="arrow left">`;
-        
+
         const nextButton = document.createElement("button");
         nextButton.classList.add("slider-next");
         nextButton.innerHTML = `<img src="imgs/arrow-right.svg" alt="arrow right">`;
 
-        buttonsGroup.appendChild(prevButton)
-        buttonsGroup.appendChild(nextButton)
+        buttonsGroup.appendChild(prevButton);
+        buttonsGroup.appendChild(nextButton);
 
-        sliderHeading.appendChild(buttonsGroup)
+        sliderHeading.appendChild(buttonsGroup);
 
-
+        // Reset Slider
         this.slider = timeline;
         this.sliderItems = this.slider.querySelectorAll(".slider-item");
         this.sliderNext = nextButton;
         this.sliderPrev = prevButton;
 
         this.sliderNext &&
-        ((this.sliderNext.direction = "next"),
-        this.sliderNext.addEventListener(
-          "click",
-          this.sliderNav.bind(this, this.sliderNext.direction, this)
-        ));
-      this.sliderPrev &&
-        ((this.sliderPrev.direction = "prev"),
-        this.sliderPrev.addEventListener(
-          "click",
-          this.sliderNav.bind(this, this.sliderPrev.direction, this)
-        ));
+          ((this.sliderNext.direction = "next"),
+          this.sliderNext.addEventListener(
+            "click",
+            this.sliderNav.bind(this, this.sliderNext.direction, this)
+          ));
+        this.sliderPrev &&
+          ((this.sliderPrev.direction = "prev"),
+          this.sliderPrev.addEventListener(
+            "click",
+            this.sliderNav.bind(this, this.sliderPrev.direction, this)
+          ));
       }
     }
   }
