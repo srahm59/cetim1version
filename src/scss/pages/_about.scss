@@ -1,201 +1,342 @@
 #qui-sommes-nous-page {
-    .npf__section {
-        padding: 32px 24px 44px 24px;
+  .npf__section {
+    padding: 32px 24px 44px 24px;
 
-        @media screen and (min-width: $md-breakpoint) {
-            padding: 84px 84px 120px 84px;
-        }
-
-        background-color: $mecallians-secondary-700-color;
-
-        .npf-items {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-
-            @media screen and (min-width: $md-breakpoint) {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-column-gap: 32px;
-            }
-
-            @media screen and (min-width: $xl-breakpoint) {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        h3 {
-            font-size: 32px;
-            line-height: 44px;
-            letter-spacing: 1.6px;
-            font-weight: 600;
-            text-align: center;
-            color: #fff;
-            width: 640px;
-            max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 32px;
-
-            @media screen and (min-width: $md-breakpoint) {
-                margin-bottom: 84px;
-            }
-        }
-
-        .npf-card {
-            padding: 42px 21px;
-            text-align: center;
-            background-color: $black-005;
-            width: 100%;
-            height: 100%;
-        }
-
-        .npf-card__icon {
-            width: 42px;
-            height: 42px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 32px;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        .npf-card__content {
-            h6 {
-                margin-bottom: 8px;
-                text-transform: uppercase;
-                font-size: 14px;
-                line-height: 20px;
-                letter-spacing: 1.2px;
-                font-weight: 600;
-            }
-
-            p {
-                font-size: 14px;
-                letter-spacing: 0.75px;
-                line-height: 17.6px;
-                font-weight: 400;
-            }
-        }
+    @media screen and (min-width: $md-breakpoint) {
+      padding: 84px 84px 120px 84px;
     }
 
-    .equipements-de-pointe-section {
+    background-color: $mecallians-secondary-700-color;
+
+    .npf-items {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      @media screen and (min-width: $md-breakpoint) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 32px;
+      }
+
+      @media screen and (min-width: $xl-breakpoint) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    h3 {
+      font-size: 32px;
+      line-height: 44px;
+      letter-spacing: 1.6px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      width: 640px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+
+      @media screen and (min-width: $md-breakpoint) {
+        margin-bottom: 84px;
+      }
+    }
+
+    .npf-card {
+      padding: 42px 21px;
+      text-align: center;
+      background-color: $black-005;
+      width: 100%;
+      height: 100%;
+    }
+
+    .npf-card__icon {
+      width: 42px;
+      height: 42px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .npf-card__content {
+      h6 {
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1.2px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 14px;
+        letter-spacing: 0.75px;
+        line-height: 17.6px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .historique__section {
+
+    padding: 32px 24px 44px 24px;
+
+    @media screen and (min-width: $lg-breakpoint) {
+      padding: 84px 0 84px 0;
+    }
+
+    .historique-items {
+      display: flex;
+      @media screen and (max-width: calc($lg-breakpoint - 1px)) {
+        > .historique-heading, .historique-item {
+          width: 90%;
+        }
+      }
+    }
+
+    .historique-heading {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      position: relative;
+      padding-right: 32px;
+
+      @media screen and (min-width: $lg-breakpoint) {
+        width: 30%;
+        background-color: white;
+        z-index: 2;
+        padding-left: 84px;
+      }
+
+      h3 {
+        color: $mecallians-secondary-700-color;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 44px;
+        letter-spacing: 1.6px;
+      }
+
+      p {
+        font-size: 16px;
+        color: $black-100;
+        line-height: 28px;
+        font-weight: 400;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 24px;
+      }
+
+      button {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $black-100;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 1px;
+        background-color: $black-020;
+      }
+    }
+
+    .historique-timeline {
+      width: 70%;
+      display: flex;
+    }
+
+    .historique-item {
+      flex: 0 0 auto;
+      padding-right: 12px;
+      padding-left: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 84px;
+
+      @media screen and (min-width: $lg-breakpoint) {
+        width: 30%;
+      }
+
+      .historique-item__date {
+        height: 91px;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .historique-item__year {
+        color: $cetim-primary-color;
+        font-size: 72px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        line-height: 53px;
+      }
+
+      h6 {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 1.2px;
+        color: $black-100;
+      }
+
+      p {
+        color: $black-100;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      .historique-item__content {
         display: flex;
         flex-direction: column;
-        gap: 32px;
-        padding: 32px 24px 44px 24px;
+        height: 88px;
+        gap: 12px;
+      }
 
-        .column {
-            &:nth-of-type(1) {
-                order: 1;
-
-                @media screen and (min-width: $lg-breakpoint) {
-                    order: 1;
-                    padding-left: 84px;
-                }
-            }
-
-            &:nth-of-type(2) {
-                order: 2;
-
-                @media screen and (min-width: $lg-breakpoint) {
-                    order: 2;
-                }
-            }
-
-            &:nth-of-type(3) {
-                order: 4;
-
-                @media screen and (min-width: $lg-breakpoint) {
-                    order: 3;
-                }
-            }
-
-            &:nth-of-type(4) {
-                order: 3;
-
-                @media screen and (min-width: $lg-breakpoint) {
-                    order: 4;
-                }
-            }
-        }
-
-        @media screen and (min-width: $lg-breakpoint) {
-            padding: 84px 0;
-        }
-
-        @media screen and (min-width: $lg-breakpoint) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-column-gap: 32px;
-            grid-row-gap: 32px;
-        }
-
-        h3 {
-            font-size: 32px;
-            font-weight: 600;
-            line-height: 44px;
-            letter-spacing: 1.6px;
-            color: $mecallians-secondary-700-color;
-            margin-bottom: 64px;
-        }
-
-        h5 {
-            font-size: 22px;
-            font-weight: 600;
-            line-height: 28px;
-            letter-spacing: 1px;
-            color: $black-100;
-            margin-bottom: 32px;
-        }
+      .historique-item__image {
+        height: 140px;
 
         img {
-            width: 100%;
-            object-fit: cover;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
-
-        .edp__lists {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 0;
-
-            @media screen and (min-width: $lg-breakpoint) {
-                gap: 32px;
-                flex-direction: row;
-            }
-
-            .edp__list {
-                @media screen and (min-width: $lg-breakpoint) {
-                    width: 50%;
-                }
-
-                li {
-                    font-size: 16px;
-                    font-weight: 400;
-                    line-height: 28px;
-                    color: $black-080;
-                    margin-bottom: 8px;
-                    padding-left: 12px;
-                    position: relative;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        top: 7px;
-                        display: block;
-                        width: 7px;
-                        height: 7px;
-                        border-radius: 50%;
-                        transform: translate(-50%, 50%);
-                        background-color: $cetim-primary-color;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
+
+  .equipements-de-pointe-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 24px 44px 24px;
+
+    .column {
+      &:nth-of-type(1) {
+        order: 1;
+
+        @media screen and (min-width: $lg-breakpoint) {
+          order: 1;
+          padding-left: 84px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        order: 2;
+
+        @media screen and (min-width: $lg-breakpoint) {
+          order: 2;
+        }
+      }
+
+      &:nth-of-type(3) {
+        order: 4;
+
+        @media screen and (min-width: $lg-breakpoint) {
+          order: 3;
+        }
+      }
+
+      &:nth-of-type(4) {
+        order: 3;
+
+        @media screen and (min-width: $lg-breakpoint) {
+          order: 4;
+        }
+      }
+    }
+
+    @media screen and (min-width: $lg-breakpoint) {
+      padding: 84px 0;
+    }
+
+    @media screen and (min-width: $lg-breakpoint) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 32px;
+      grid-row-gap: 32px;
+    }
+
+    h3 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 44px;
+      letter-spacing: 1.6px;
+      color: $mecallians-secondary-700-color;
+      margin-bottom: 64px;
+    }
+
+    h5 {
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 28px;
+      letter-spacing: 1px;
+      color: $black-100;
+      margin-bottom: 32px;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .edp__lists {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0;
+
+      @media screen and (min-width: $lg-breakpoint) {
+        gap: 32px;
+        flex-direction: row;
+      }
+
+      .edp__list {
+        @media screen and (min-width: $lg-breakpoint) {
+          width: 50%;
+        }
+
+        li {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 28px;
+          color: $black-080;
+          margin-bottom: 8px;
+          padding-left: 12px;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            display: block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            transform: translate(-50%, 50%);
+            background-color: $cetim-primary-color;
+          }
+        }
+      }
+    }
+  }
 }

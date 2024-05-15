@@ -1,310 +1,346 @@
 #homepage {
-    .hero-section {
-        background-image: url(../imgs/hero_bg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        height: 100vh;
+  .hero-section {
+    background-image: url(../imgs/hero_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
 
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background-color: #01112C;
-            opacity: 0.8;
-        }
-
-        .hero-wrapper {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: #FFFFFF;
-            width: 390px;
-            margin: 0 auto;
-
-            @media screen and (min-width: $md-breakpoint) {
-                width: 825px;
-            }
-        }
-
-        h1 {
-            font-size: 60px;
-            font-weight: 500;
-            line-height: 56px;
-            letter-spacing: 2px;
-            margin-bottom: 0.75rem;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 28px;
-            margin-bottom: 2rem;
-            color: #fff;
-            font-weight: 400;
-        }
-
-        .hero-inner {
-            .btn-group {
-
-                > :not(.btn-check:first-child)+.btn,
-                .hero-inner .btn-group>.btn-group:not(:first-child) {
-                    margin-left: 2rem;
-                }
-            }
-
-        }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #01112c;
+      opacity: 0.8;
     }
 
-    .nos-expertises-section {
-        @media screen and (min-width: $lg-breakpoint) {
-            padding: 32px 0px 64px 0px;
-        }
-
-        .section-heading {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 602px;
-            margin: 0 auto 42px auto;
-        }
-
-        h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            line-height: 44px;
-            letter-spacing: 1.6px;
-            color: $mecallians-secondary-700-color;
-        }
-
-        h6 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            line-height: 20px;
-            letter-spacing: 1.2px;
-            color: $cetim-primary-color;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 28px;
-            color: $black-060;
-        }
-
-        .nos-expertises__items {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        @media screen and (min-width: $lg-breakpoint) {
-            .nos-expertises__items {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-column-gap: 24px;
-                grid-row-gap: 12px;
-            }
-        }
-
-        .nos-expertises__item {
-            .card {
-                padding: 0 34px;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .card-body {
-                padding: 10px 20px 10px 20px;
-                background-color: #FCF3F5;
-            }
-
-            .card-title {
-                color: $cetim-primary-color;
-                text-align: center;
-                text-transform: uppercase;
-            }
-        }
+    .hero-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    .about-us-section {
-        padding: 32px 0px 64px 0px;
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #ffffff;
+      width: 390px;
+      max-width: 100%;
+      margin: 0 auto;
 
-        h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            line-height: 44px;
-            letter-spacing: 1.6px;
-            color: $mecallians-secondary-700-color;
-        }
-
-        p {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 28px;
-            color: $black-100;
-        }
-
-        .about-us__items {
-            display: flex;
-            flex-direction: column-reverse;
-            gap: 33px;
-
-            @media screen and (min-width: $lg-breakpoint) {
-                flex-direction: row;
-            }
-
-            >* {
-                flex: 0 1 auto;
-
-                @media screen and (min-width: $lg-breakpoint) {
-                    width: 50%;
-                }
-            }
-        }
-
-        .about-us__content {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            padding: 0 24px 0 24px;
-
-            @media screen and (min-width: $lg-breakpoint) {
-                padding: 32px 84px 0px 0px;
-            }
-        }
-
-        .about-us__image {
-            height: 449px;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
+      @media screen and (min-width: $lg-breakpoint) {
+        width: 825px;
+      }
     }
 
-    .actualites-section {
-        padding: 32px 0;
-        .container {
-            padding-left: 0;
-            padding-right: 0;
-        }
-        @media screen and (min-width: $lg-breakpoint) {
-            padding: 84px 0;
-        }
-
-        h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            line-height: 44px;
-            letter-spacing: 1.6px;
-            color: $mecallians-secondary-700-color;
-            text-align: center;
-            margin-bottom: 44px;
-        }
-
-        .btn {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media screen and (min-width: $lg-breakpoint) {
-        }
-        .actualites-items {
-            display: flex;
-            margin-bottom: 44px;
-        }
-        .actualites-item {
-            flex: 0 1 auto;
-            padding-left: calc(32px / 2);
-            padding-right: calc(32px / 2);
-            .card-body {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                margin-top: 12px;
-            }
-
-            img {
-                width: 100%;
-                height: 194px;
-                object-fit: cover;
-            }
-
-            .badge {
-                padding: 4px 12px 4px 12px;
-                background-color: #FCF3F5;
-                color: $cetim-primary-color;
-                font-weight: 600;
-                font-size: 0.75rem;
-                line-height: 20px;
-                letter-spacing: 1.2px;
-                text-transform: uppercase;
-            }
-
-            .card-text small {
-                color: $black-040;
-                font-weight: 700;
-                font-size: 0.875rem;
-                line-height: 17.6px;
-                letter-spacing: 0.75px;
-            }
-
-            .card-title {
-                color: $black-100;
-            }
-
-            .card-text {
-                font-weight: 400;
-                font-size: 0.875rem;
-                line-height: 17.6px;
-                letter-spacing: 0.75px;
-            }
-        }
+    h1 {
+      font-size: 60px;
+      font-weight: 500;
+      line-height: 56px;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
     }
-    .they-trust-us-section {
-        padding: 44px 0px 44px 0px;
-      
-        @media screen and (min-width: 992px) {
-          padding: 84px 0px 84px 0px;
-        }
-      
-        h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            line-height: 44px;
-            letter-spacing: 1.6px;
-            color: $mecallians-secondary-700-color;
-            text-align: center;
-            margin-bottom: 64px;
-        }
-      
-        .brand-box {
-          height: 54px;
-      
-          img {
-            margin: 0 auto;
-            display: block;
-            height: 100%;
+
+    p {
+      font-size: 1rem;
+      line-height: 28px;
+      margin-bottom: 2rem;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .hero-inner {
+      .btn-group {
+        > :not(.btn-check:first-child) + .btn,
+        .hero-inner .btn-group > .btn-group:not(:first-child) {
+          margin-left: 1rem;
+          @media screen and (min-width: $lg-breakpoint) {
+            margin-left: 2rem;
           }
         }
       }
+    }
+  }
+
+  .nos-expertises-section {
+    @media screen and (min-width: $lg-breakpoint) {
+      padding: 32px 0px 64px 0px;
+    }
+
+    .section-heading {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 602px;
+      margin: 0 auto 42px auto;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 44px;
+      letter-spacing: 1.6px;
+      color: $mecallians-secondary-700-color;
+    }
+
+    h6 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 20px;
+      letter-spacing: 1.2px;
+      color: $cetim-primary-color;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black-060;
+    }
+
+    .nos-expertises__items {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    @media screen and (min-width: $sm-breakpoint) {
+      .nos-expertises__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (min-width: $lg-breakpoint) {
+      .nos-expertises__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .nos-expertises__item {
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        height: 100%;
+      }
+
+      .card-body {
+        padding: 10px 20px 10px 20px;
+        background-color: #fcf3f5;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card-title {
+        color: $cetim-primary-color;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .about-us-section {
+    padding: 32px 0px 64px 0px;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 44px;
+      letter-spacing: 1.6px;
+      color: $mecallians-secondary-700-color;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black-100;
+    }
+
+    .about-us__items {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 33px;
+
+      @media screen and (min-width: $lg-breakpoint) {
+        flex-direction: row;
+      }
+
+      > * {
+        flex: 0 1 auto;
+
+        @media screen and (min-width: $lg-breakpoint) {
+          width: 50%;
+        }
+      }
+    }
+
+    .about-us__content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 0 24px 0 24px;
+
+      @media screen and (min-width: $lg-breakpoint) {
+        padding: 32px 84px 0px 0px;
+      }
+    }
+
+    .about-us__image {
+      height: 449px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .actualites-section {
+    display: none;
+    visibility: hidden;
+    padding: 32px 0;
+
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @media screen and (min-width: $lg-breakpoint) {
+      padding: 84px 0;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 44px;
+      letter-spacing: 1.6px;
+      color: $mecallians-secondary-700-color;
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .btn {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .actualites-items {
+      display: flex;
+      margin-bottom: 44px;
+    }
+
+    .actualites-item {
+      flex: 0 0 auto;
+      width: 80%;
+      padding-left: calc(32px / 2);
+      padding-right: calc(32px / 2);
+      @media screen and (min-width: $lg-breakpoint) {
+        padding-left: 0;
+        width: calc(100% / 3);
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      img {
+        width: 100%;
+        height: 194px;
+        object-fit: cover;
+      }
+
+      .badge {
+        padding: 4px 12px 4px 12px;
+        background-color: #fcf3f5;
+        color: $cetim-primary-color;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 20px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+
+      .card-text small {
+        color: $black-040;
+        font-weight: 700;
+        font-size: 0.875rem;
+        line-height: 17.6px;
+        letter-spacing: 0.75px;
+      }
+
+      .card-title {
+        color: $black-100;
+      }
+
+      .card-text {
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 17.6px;
+        letter-spacing: 0.75px;
+      }
+    }
+  }
+
+  .they-trust-us-section {
+    padding: 44px 0px 44px 0px;
+    overflow-x: hidden;
+
+    @media screen and (min-width: $lg-breakpoint) {
+      padding: 84px 0px 84px 0px;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 44px;
+      letter-spacing: 1.6px;
+      color: $mecallians-secondary-700-color;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .they-trust-us-items {
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 50px 0;
+
+      .slider-item {
+        flex: 0 0 auto;
+        width: 50%;
+        @media screen and (min-width: $lg-breakpoint) {
+          width: calc(100% / 6);
+        }
+      }
+    }
+
+    .brand-box {
+      height: 54px;
+      padding: 0 10px;
+      img {
+        margin: 0 auto;
+        display: block;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
 }

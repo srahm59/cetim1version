@@ -12,6 +12,10 @@ body {
     font-family: $primary-font;
 }
 
+html,body {
+    overflow-x: hidden;
+}
+
 img {
     max-width: 100%;
 }
@@ -29,6 +33,7 @@ ul {
     max-width: 1440px;
     margin: 0 auto;
     padding: 24px 20px 24px 20px;
+    overflow: hidden;
 }
 
 

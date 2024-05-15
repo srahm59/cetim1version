@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;600&display=swap");
+
+@import "bootstrap/scss/bootstrap";
+
+:root {
+    --dark: #1d1d1d;
+    --light: #fff;
+    --green: #28a92b;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--dark);
+}
+
+
+.drag-proxy {
+    visibility: hidden;
+    position: absolute;
+}
+
+.boxes {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 75px;
+    border: 1px dashed #e79100;
+    margin-top: 600px;
+}
+
+/* .boxes::after {
+            content: "";
+            background-color: red;
+            display: block;
+            height: 75px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+        } */
+
+.box {
+    width: 75px;
+    height: 75px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green);
+    color: var(--light);
+}
+
+.item {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    transform-origin: center bottom;
+}
+
+.item img {
+    max-width: 240px;
+    max-height: 440px;
+    object-fit: contain;
+}
+
+.control {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+}
+
+.button {
+    cursor: pointer;
+    padding: 8px;
+    color: var(--green);
+    background: transparent;
+    border: 1px solid var(--green);
+    border-radius: 14px;
+    margin: 0 5px;
+    width: 100px;
+    transition: all .3s;
+}
+
+.button:hover {
+    color: var(--dark);
+    background: var(--green);
+}
+
+/* Start Slider Styles */
+.slider {
+    flex-wrap: nowrap;
+    margin: 50px 0;
+}
+.slider .slider-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+.slider .box {
+    width: 100%;
+}
+.pagination {
+    text-align: center;
+    margin: auto;
+}
+.pagination .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.page-numbers.next, .page-numbers.prev {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e1e1e1;
+    transition: background-color .5s ease-out,color .5s ease-out,border-color .5s ease-out;
+    color: #fff;
+}
+.page-numbers.next:hover, .page-numbers.prev:hover {
+    color: #000;
+    background-color: #e1e1e1;
+    border-color: transparent;
+}
+
+.btn {
+    white-space: nowrap;
+    font-size: .875rem;
+    border-radius: 2em;
+    padding: 12px 22px 15px;
+    line-height: 1;
+    border: 1px solid #dd332a;
+    color: #fff;
+    background-color: #dd332a;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: normal;
+    text-align: center;
+    background-image: none;
+    transition: background-color .5s ease-out,transform .5s ease-out,color .5s ease-out,border-color .5s ease-out,opacity .5s ease-out,box-shadow .5s ease-out;
+    outline: none;
+}
+.btn-stroke {
+    border: 1px solid #e1e1e1;
+    background-color: transparent;
+    color: #fff;
+    transition: background-color .5s ease-out,color .5s ease-out,border-color .5s ease-out,opacity .5s ease-out;
+}
+.btn-stroke:hover, .btn-stroke:focus {
+    color: #000;
+    background-color: #e1e1e1;
+    border-color: transparent;
+}
+/* End Slider Styles */
+

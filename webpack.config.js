@@ -39,6 +39,10 @@ module.exports = {
             filename: 'about.html',
             template: './src/about.html'
          }),
+         new HtmlWebpackPlugin({ 
+            filename: 'slider.html',
+            template: './src/slider.html'
+         }),
         new miniCssExtractPlugin()
     ],
     module: {
