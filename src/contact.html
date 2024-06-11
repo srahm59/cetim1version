@@ -84,8 +84,8 @@
   <!-- End Header -->
   <main id="contact-page">
     <section class="page-title container-fluid">
-      <div class="d-flex">
-        <div class="page-title__content col-6">
+      <div class="page-title__container">
+        <div class="page-title__content">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -93,40 +93,92 @@
             </ol>
           </nav>
           <h1>Contactez-nous</h1>
-          <p class="is-subtitle">Parlez-nous de votre projet, nos experts sont disponibles pour vous conseiller</p>
-          <div class="btn-group">
-            <a href="#" class="btn btn-sm flex btn-primary">
-              <i class="icon phone-icon"></i>
-              By phone
-            </a>
-            <a href="#" class="btn btn-sm flex btn-primary">
-              <i class="icon email-icon"></i>
-              Par email
-            </a>
-            <a href="#" class="btn btn-sm flex btn-primary">
-              <i class="icon email-icon"></i>
-              Request a quote or information
-            </a>
-          </div>
+          <h2>Parlez-nous de votre projet, nos experts sont disponibles pour vous conseiller</h2>
+          <p>Par téléphone : <a href="tel:+2120522539521">+(212) 0522 539 521</a> ou par email via ce formulaire ci-dessous <br> <small>(nous vous répondons sous 1 jour ouvrés)</small></p>
         </div>
-        <div class="page-title__image col-6">
+        <div class="page-title__image">
           <img src="./imgs/contact_page_title_img.jpg" alt="contact page title image">
         </div>
       </div>
     </section>
+    <section class="contact-form container-fluid">
+      <div class="contact-us">
+        <form>
+          <div class="form-group">
+            <div id="first-name-input" class="contact-us__field">
+              <input id="first-name" type="text" name="first-name" placeholder="Prénom" class="contact-us__input" minlength="2" data-pristine-required="">
+              <label for="first-name" class="contact-us__label">Prénom</label>
+            </div>
+            <div id="last-name-input" class="contact-us__field">
+              <input id="last-name" type="text" name="last-name" placeholder="Nom" class="contact-us__input" minlength="2" data-pristine-required="">
+              <label for="last-name" class="contact-us__label">Nom</label>
+            </div>
+            <div id="email-input" class="contact-us__field">
+              <input id="email-address" type="text" name="email-address" placeholder="Adresse email"  class="contact-us__input">
+              <label for="email-address" class="contact-us__label">Adresse email</label>
+            </div>
+            <div id="phone-number-input" class="contact-us__field">
+              <input id="phone-number" type="number" name="phone-number" placeholder="Numéro de téléphone" class="contact-us__input">
+              <label for="phone-number" class="contact-us__label">Numéro de téléphone</label>
+            </div>
+            <div id="company-input" class="contact-us__field">
+              <input id="company" type="text" name="company" class="contact-us__input" placeholder="Entreprise" minlength="2" data-pristine-required="">
+              <label for="company" class="contact-us__label">Entreprise</label>
+            </div>
+            <div id="country-input" class="contact-us__field">
+              <input id="country" type="text" name="country" class="contact-us__input" placeholder="Pays" minlength="2" data-pristine-required="">
+              <label for="country" class="contact-us__label">Pays</label>
+            </div>
+          </div>
+          <div id="file-input" class="contact-us__field is-full">
+            <div class="contact-us__input">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 5C4.25 3.48122 5.48122 2.25 7 2.25H14.9868C15.5506 2.25 16.0798 2.52157 16.4085 2.97955L19.4217 7.17745C19.6352 7.47488 19.75 7.83178 19.75 8.1979V19C19.75 20.5188 18.5188 21.75 17 21.75H7C5.48122 21.75 4.25 20.5188 4.25 19V5ZM7 3.75C6.30964 3.75 5.75 4.30964 5.75 5V19C5.75 19.6904 6.30964 20.25 7 20.25H17C17.6904 20.25 18.25 19.6904 18.25 19V8.89705H15C14.5858 8.89705 14.25 8.56126 14.25 8.14705V3.75H7Z" fill="white"/>
+                <path d="M15.0857 13.2185C14.8269 13.542 14.355 13.5944 14.0315 13.3357L12.7501 12.3105V15.75C12.7501 16.1642 12.4143 16.5 12.0001 16.5C11.5858 16.5 11.2501 16.1642 11.2501 15.75V12.3104L9.96855 13.3357C9.6451 13.5944 9.17313 13.542 8.91438 13.2185C8.65562 12.8951 8.70806 12.4231 9.03151 12.1643L11.5288 10.1665C11.6561 10.0636 11.8177 10.0015 11.9937 10C11.9958 10 11.9979 10 12.0001 10H12.0025C12.1816 10.0006 12.3459 10.0639 12.4746 10.1692L14.9685 12.1643C15.292 12.4231 15.3444 12.8951 15.0857 13.2185Z" fill="white"/>
+              </svg>
+              <label for="file">Pièce jointe</label>
+              <span>Les fichiers autorisés sont les PDF, images JPG et PNG d'1 Mo au maximum</span>
+              <input id="file" type="file" hidden>
+            </div>
+            
+          </div>
+          <div id="message-input" class="contact-us__field is-full">
+            <textarea id="message" name="message" placeholder="Votre message" class="contact-us__input" minlength="5" data-pristine-required=""></textarea>
+            <label for="message" class="contact-us__label">Votre message</label>
+          </div>
+          <button type="submit" class="btn btn-secondary has-style-2">Submit</button>
+        </form>
+      </div>
+      <!-- <div class="btn-group">
+        <a href="#" class="btn btn-sm flex btn-primary">
+          <i class="icon phone-icon"></i>
+          By phone
+        </a>
+        <a href="#" class="btn btn-sm flex btn-primary">
+          <i class="icon email-icon"></i>
+          Par email
+        </a>
+        <a href="#" class="btn btn-sm flex btn-primary">
+          <i class="icon email-icon"></i>
+          Request a quote or information
+        </a>
+      </div> -->
+    </section>
     <section class="page-intro container-fluid">
-      <div class="d-flex">
-        <div class="page-intro__map col-6">
+      <div class="page-intro__container page-intro__reverse">
+        <div class="page-intro__content">
+          <h3>Où nous trouver ?</h3>
+          <div>
+            <p>Technopole aéronautique de Nouasser,</p>
+            <p>Aéroport Mohammed V</p>
+            <p>20 000 Casablanca - Nouasser</p>
+          </div>
+        </div>
+        <div class="page-intro__map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.1409352515975!2d-7.577889561653144!3d33.36738643105638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda63ba21c23d507%3A0x7f044474e1e3663b!2sCetim%20Maroc%20Mecanique!5e0!3m2!1sen!2sma!4v1715254231458!5m2!1sen!2sma"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="page-intro__content col-6">
-          <h3>Où nous trouver ?</h3>
-          <p>Technopole aéronautique de Nouasser,</p>
-          <p>Aéroport Mohammed V</p>
-          <p>20 000 Casablanca - Nouasser</p>
         </div>
       </div>
     </section>
@@ -151,7 +203,7 @@
       <div class="d-flex footer-columns">
         <div class="footer-column">
           <a href="#" class="footer-brand">
-            <img src="./imgs/cetim_carnot.svg" alt="cetim carnot logo" />
+            <img src="./imgs/cetim_maroc_blanc.svg" alt="cetim carnot logo" />
           </a>
           <p>
             Lorem ipsum dolor sit amet consectetur. Massa mauris porta

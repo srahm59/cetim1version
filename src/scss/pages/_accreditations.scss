@@ -1,0 +1,98 @@
+#accreditations-page {
+  .page-intro__content {
+    img {
+      height: 64px;
+    }
+  }
+
+  .accreditations__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media screen and (min-width: $lg-breakpoint) {
+      padding: 84px;
+      flex-direction: row;
+    }
+
+    > * {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    img {
+      height: 64px;
+    }
+  }
+
+  .accreditations__provider {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+  }
+
+  @media screen and (min-width: $lg-breakpoint) {
+    .accreditations__container--left {
+      width: calc(100% / 3);
+    }
+    .accreditations__container--right {
+      width: calc(100% - 100% / 3);
+    }
+  }
+
+  .accreditations__items {
+    width: 100%;
+  }
+
+  .accreditations__items.d-flex {
+    flex-direction: column;
+    --flex-gap: 32px;
+  }
+
+  .accreditations__items.d-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @media screen and (min-width: $lg-breakpoint) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .accreditation__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .accreditation__title {
+    color: $black-060;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.6px;
+    letter-spacing: 0.75px;
+  }
+  .accreditation__subtitle {
+    color: $black-060;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.6px;
+    letter-spacing: 0.75px;
+  }
+  h3 {
+    color: $mecallians-secondary-700-color;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 1.6px;
+  }
+  p {
+    color: $black-100;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+}

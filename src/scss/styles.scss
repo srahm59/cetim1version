@@ -1,5 +1,4 @@
 @import "../../node_modules/normalize.css/normalize.css";
-@import "../../node_modules/slick-carousel/slick/slick.scss";
 @import 'variables';
 @import 'init';
 @import 'icons';
@@ -12,6 +11,9 @@
 @import 'elements/zone-intervention';
 @import 'elements/accreditations';
 @import 'elements/slider';
+@import 'elements/form';
 @import 'pages/home';
 @import 'pages/about';
+@import 'pages/accreditations';
+@import 'pages/service';
 @import 'elements/footer';

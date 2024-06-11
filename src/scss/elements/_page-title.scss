@@ -1,15 +1,25 @@
 .page-title {
-    .d-flex {
-        --flex-gap: 0;
-        justify-content: space-between;
+    .page-title__container {
+        display: flex;
+        flex-direction: column-reverse;
+        @media screen and (min-width: $lg-breakpoint) {
+          flex-direction: row;
+          gap: 24px;
+          > * {
+            flex: 0 1 auto;
+            width: 50%;
+          }
+          &.page-title__reverse .page-title__content {
+            padding-right: 84px;
+          }
+          &:not(.page-title__reverse) .page-title__content {
+            padding-left: 84px;
+          }
+        }
     }
-    @media screen and (min-width: $md-breakpoint) {
+    @media screen and (min-width: $lg-breakpoint) {
         & {
             padding-top: 32px;
-        }
-        .page-title__content {
-            width: 45%;
-            padding-left: 84px;
         }
     }
     nav {
@@ -17,7 +27,7 @@
     }
     h1 {
         --font-size: 48px;
-        --font-weight: 600;
+        --font-weight: 500;
         margin-top: 0;
         margin-bottom: 16px;
         color: $mecallians-secondary-700-color;
@@ -26,7 +36,7 @@
         line-height: 64px;
         letter-spacing: 2px;
     }
-    @media screen and (min-width: $md-breakpoint) {
+    @media screen and (min-width: $lg-breakpoint) {
         h1 {
             --font-size: 64px;
             --font-weight: 500;
@@ -39,10 +49,13 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 28px;
+        a {
+          color: $cetim-primary-color;
+        }
     }
-    .is-subtitle {
+    h2 {
         margin-top: 0;
-        margin-bottom: 48px;
+        margin-bottom: 10px;
         color: $mecallians-secondary-700-color;
         font-size: 28px;
         font-weight: 500;
@@ -65,7 +78,7 @@
             width: 100%;
         }
     }
-    @media screen and (min-width: $md-breakpoint) {
+    @media screen and (min-width: $lg-breakpoint) {
         .page-title__image  {
             display: block;
             visibility: visible;

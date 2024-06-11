@@ -77,6 +77,21 @@
 }
 
 .btn-secondary {
-    background-color: $mecallians-secondary-700-color;
-    color: #fff;
+  background-color: $mecallians-secondary-700-color;
+  color: #fff;
+}
+
+.has-style-2 {
+  position: relative;
+  border: 1px solid #fff;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 48px;
+    border: 1px solid #fff;
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    z-index: -1;
+  }
 }

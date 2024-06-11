@@ -1,4 +1,4 @@
-import { gsap } from "gsap";
+import { gsap, snap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 gsap.registerPlugin(Draggable);
 
@@ -13,6 +13,9 @@ export class Slider {
       this.sliderPrev = container.querySelector(".slider-prev");
       this.sliderTL = null;
       this.dragSlider = null;
+      this.dots = container.querySelector(".pagination");
+      this.itemsToShow = null;
+      this.itemsToScroll = null;
 
       this.sliderNext &&
         ((this.sliderNext.direction = "next"),
@@ -26,7 +29,13 @@ export class Slider {
           "click",
           this.sliderNav.bind(this, this.sliderPrev.direction, this)
         ));
-      this.historiqueSliderMobileAdaptation();
+
+      if (this.sliderContainer.classList.contains("historique__section")) {
+        this.historiqueSliderMobileAdaptation();
+      }
+
+      this.dots && this.initPagination();
+
       this.resizeEvent = () => {
         this.reInit();
       };
@@ -75,6 +84,7 @@ export class Slider {
         ease: "power2.out",
       });
     }
+    this.dots && this.trackDot();
   }
 
   getSlideVisibles() {
@@ -194,6 +204,7 @@ export class Slider {
             this.dragSlider[0].x - this.dragSlider[0].startX >= 0 ? 1 : -1;
           const snapValue =
             1 / (this.sliderItems.length - this.getSlideVisibles());
+          this.dots && this.trackDot();
           gsap.to(this.slider, {
             x: 0,
             duration: 0.7,
@@ -220,6 +231,7 @@ export class Slider {
     this.kill();
     if (this.sliderContainer.classList.contains("historique__section")) {
       this.historiqueSliderMobileAdaptation();
+      this.dots && this.initPagination();
     }
     this.initSlider(currentProgress);
   }
@@ -249,6 +261,39 @@ export class Slider {
     });
   }
 
+  initPagination() {
+    const pages = Math.ceil(this.sliderItems.length / this.getSlideVisibles());
+    for (let index = 0; index < pages + 1; index++) {
+      const dot = document.createElement("a");
+      dot.classList.add("dot");
+      dot.addEventListener("click", () => {
+        const snapValue = (1 / pages) * index;
+        gsap.to(this.sliderTL, {
+          progress: gsap.utils.snap(snapValue, snapValue),
+          duration: 0.7,
+        });
+        const activeDots = this.dots.querySelectorAll(".dot.active");
+        activeDots.forEach((element) => {
+          element.classList.remove("active");
+        });
+        dot.classList.add("active");
+      });
+      this.dots.appendChild(dot);
+    }
+  }
+
+  trackDot() {
+    const dots = this.dots.querySelectorAll(".dot");
+    console.log(1 / dots.length);
+    let index = Math.floor(this.sliderTL.progress() * dots.length);
+    index = index === 0 ? index : index - 1;
+    const activeDots = this.dots.querySelectorAll(".dot.active");
+    activeDots.forEach((element) => {
+      element.classList.remove("active");
+    });
+    dots[index].classList.add("active");
+  }
+
   historiqueSliderMobileAdaptation() {
     if (window.matchMedia("(max-width: 991px)").matches) {
       if (this.sliderContainer.querySelector(".historique-timeline")) {
@@ -272,42 +317,18 @@ export class Slider {
         if (sliderHeading.querySelector(".btn-group")) {
           sliderHeading.querySelector(".btn-group").remove();
         }
+
+        const pagination = document.createElement("div");
+        pagination.classList.add("pagination");
+        this.dots = pagination;
+
+        this.sliderContainer.appendChild(pagination);
         sliderHeading.classList.add("slider-item");
         slider.classList.add("slider");
         this.slider = slider;
         this.sliderItems = this.slider.querySelectorAll(".slider-item");
         this.sliderNext = null;
         this.sliderPrev = null;
-
-        // Add navigation dots
-
-        const dotsWrapper = document.createElement("div");
-        dotsWrapper.classList.add("dots");
-
-        for (let index = 0; index < this.sliderItems.length; index++) {
-          const direction = "next";
-          const dot = document.createElement("a");
-          dot.classList.add("dot");
-          dot.addEventListener("click", () => {
-            const snapValue = (1 / (this.sliderItems.length - this.getSlideVisibles())) * index;
-            gsap.to(this.sliderTL, {
-              progress: gsap.utils.snap(
-                snapValue,
-                "next" === direction
-                  ? snapValue
-                  : snapValue
-              ),
-              duration: 0.7,
-            });
-            const activeDots = dotsWrapper.querySelectorAll(".dot.active");
-            activeDots.forEach(element => {
-              element.classList.remove("active")
-            });
-            dot.classList.add("active");
-          });
-          dotsWrapper.appendChild(dot);
-        }
-        this.sliderContainer.appendChild(dotsWrapper);
       }
     } else {
       if (!this.sliderContainer.querySelector(".historique-timeline")) {
@@ -344,6 +365,12 @@ export class Slider {
         buttonsGroup.appendChild(nextButton);
 
         sliderHeading.appendChild(buttonsGroup);
+
+        if (this.dots) {
+          this.dots.remove();
+        }
+
+        this.dots = null;
 
         // Reset Slider
         this.slider = timeline;

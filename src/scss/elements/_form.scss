@@ -1,0 +1,157 @@
+.contact-form {
+  background-color: $mecallians-secondary-700-color;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+form {
+
+  // display: flex;
+  // flex-wrap: wrap;
+
+  @media screen and (min-width: $lg-breakpoint) {
+     .form-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  }
+ 
+
+  button {
+    width: 100% !important;
+  }
+
+  input::-webkit-inner-spin-button,
+  input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield
+  }
+
+  .contact-us__field {
+    // flex: 0 1 auto;
+    // // width: 50%;
+    // padding-left: 12px;
+    // padding-right: 12px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 24px;
+    position: relative;
+
+    // &.is-full {
+    //   width: 100%;
+    // }
+
+    .contact-us__input {
+      background: transparent;
+      border: 1px solid transparent;
+      height: 56px;
+      outline: 0;
+      padding-left: 24px;
+      padding-top: 15px;
+      width: 100%;
+      // border-color: $mecallians-secondary-700-color;
+      // color: $mecallians-secondary-700-color;
+      border-color: #fff;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    
+   
+
+    .contact-us__label {
+      color: hsla(0, 0%, 100%, .8);
+      display: block;
+      font-size: 12px;
+      height: 16px;
+      letter-spacing: .75px;
+      line-height: 1.33;
+      padding-left: 24px;
+      position: absolute;
+      top: 6px;
+      transition: .2s;
+    }
+
+    .contact-us__input:focus {
+      background-color: hsla(0, 0%, 100%, .12);
+      border-color: transparent;
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .2);
+    }
+
+    .contact-us__input::placeholder {
+      color: transparent
+    }
+
+    .contact-us__input:placeholder-shown~.contact-us__label {
+      cursor: text;
+      height: 28px;
+      top: 13px
+    }
+
+    .contact-us__input:placeholder-shown~.contact-us__label {
+      color: hsla(0, 0%, 100%, .6);
+      // color: #000;
+      font-family: Source Sans Pro, sans-serif;
+      font-size: 16px;
+      line-height: 1.75
+    }
+
+    .contact-us__input:-webkit-autofill~.contact-us__label,
+    .contact-us__input:focus~.contact-us__label {
+      display: block;
+      height: 16px;
+      position: absolute;
+      top: 6px;
+      -webkit-transition: .2s;
+      transition: .2s
+    }
+
+    .contact-us__input:focus~.contact-us__label {
+      // color: #000;
+      color: hsla(0, 0%, 100%, .6);
+      font-size: 12px;
+      letter-spacing: .75px;
+      line-height: 1.33;
+    }
+
+    textarea {
+      height: 194px !important;
+    }
+
+  }
+
+  #file-input {
+    input {
+      display: none;
+    }
+    .contact-us__input {
+      display: flex;
+      gap: 8px;
+      padding-top: 0;
+      align-items: center;
+      svg {
+        flex: 0 0 auto;
+      }
+      span {
+        color: hsla(0, 0%, 100%, .6);
+        font-family: Source Sans Pro, sans-serif;
+        font-size: 12px;
+        letter-spacing: .75px;
+        line-height: 1.33;
+      }
+
+      label {
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+}

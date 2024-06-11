@@ -9,7 +9,7 @@
     padding: 40px 0 40px 0;
     text-align: center;
 
-    @media screen and (min-width: $md-breakpoint) {
+    @media screen and (min-width: $lg-breakpoint) {
       & {
         padding: 64px 0 64px 84px;
         text-align: left;
@@ -38,7 +38,7 @@
     display: none;
   }
 
-  @media screen and (min-width: $md-breakpoint) {
+  @media screen and (min-width: $lg-breakpoint) {
     .contact-us__image {
       display: block;
       flex: 0 1 auto;
@@ -72,7 +72,7 @@ footer {
     justify-content: space-between;
   }
 
-  @media screen and (min-width: $md-breakpoint) {
+  @media screen and (min-width: $lg-breakpoint) {
     .footer-columns {
       padding: 51px 0;
     }
@@ -167,7 +167,7 @@ footer {
       flex-direction: row;
     }
 
-    @media screen and (min-width: $md-breakpoint) {
+    @media screen and (min-width: $lg-breakpoint) {
       & {
         padding-top: 13px;
         padding-bottom: 13px;

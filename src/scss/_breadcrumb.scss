@@ -27,7 +27,7 @@ $breadcrumb-item-active-color: $black-040;
     &.active {
         color: $breadcrumb-item-active-color;
     }
-    a {
+    a,span {
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.75px;

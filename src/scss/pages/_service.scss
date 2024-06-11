@@ -1,0 +1,137 @@
+#service-page {
+  .defis-section {
+    background-color: #b8cee333;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $lg-breakpoint) {
+      padding: 84px;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      gap: 32px;
+    }
+    > * {
+      flex: 0 1 auto;
+    }
+    .defis-section__heading {
+      @media screen and (min-width: $lg-breakpoint) {
+        width: 30%;
+      }
+      > * {
+        margin-bottom: 32px;
+      }
+      h3 {
+        color: $mecallians-secondary-700-color;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 44px;
+        letter-spacing: 1.6px;
+      }
+      p {
+        color: $black-060;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+      }
+      .defis-section__subtitle {
+        color: $black-080;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 1px;
+      }
+    }
+    .defis-section__content {
+      @media screen and (min-width: $lg-breakpoint) {
+        width: 70%;
+        padding-top: 76px;
+      }
+      .defis-section__grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+      }
+      > p {
+        color: $black-060;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+      }
+    }
+    .defis-section__card {
+      flex: 0 1 auto;
+      padding-bottom: 16px;
+      padding-top: 16px;
+      @media screen and (min-width: $lg-breakpoint) {
+        width: 50%;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      h4 {
+        color: $mecallians-secondary-700-color;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 1.8px;
+        margin-bottom: 4px;
+      }
+      p {
+        color: $black-100;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+      }
+    }
+  }
+  .approche-section {
+    @media screen and (min-width: $lg-breakpoint) {
+      padding: 84px;
+    }
+    h3 {
+      color: $mecallians-secondary-700-color;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 44px;
+      letter-spacing: 1.6px;
+      margin-bottom: 64px;
+    }
+    .approche-tab__container {
+      display: flex;
+      align-items: flex-start;
+    }
+    .approche-tab__nav {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      li {
+        a {
+          color: $black-060;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 28px;
+          letter-spacing: 1px;
+          position: relative;
+          padding-bottom: 30px;
+          display: block;
+          &.active {
+            color: $cetim-primary-color;
+          }
+        }
+        &:not(:last-of-type) {
+          ::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: $black-020;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+    .approche-tab__content {
+      padding: 0 32px;
+    }
+  }
+}
